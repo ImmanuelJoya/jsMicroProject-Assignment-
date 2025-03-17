@@ -1,0 +1,35 @@
+import express from 'express';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import itemsData from './data/items.json' with { type: 'json' };
+
+// Define __dirname for ESM
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const app = express();
+const port = 3000;
+
+// Middleware to serve static files from the public folder
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/favicon.ico', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'favicon.ico'));
+  });
+
+app.get('/api/items', (req, res) => {
+  try {
+    res.json(itemsData);
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to load items' });
+  }
+});
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'images', 'index.html'));
+});
+
+// Start server
+app.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}`);
+});

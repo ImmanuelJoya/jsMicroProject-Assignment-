@@ -1,0 +1,8 @@
+[
+    {"id": 1, "name": "Item 1", "description": "A great product", "price": 29.99},
+    {"id": 2, "name": "Item 2", "description": "Amazing quality", "price": 39.99},
+    {"id": 3, "name": "Item 3", "description": "Best value", "price": 19.99},
+    {"id": 4, "name": "Item 4", "description": "Premium choice", "price": 49.99},
+    {"id": 5, "name": "Item 5", "description": "Top rated", "price": 34.99},
+    {"id": 6, "name": "Item 6", "description": "Customer favorite", "price": 24.99}
+  ]
