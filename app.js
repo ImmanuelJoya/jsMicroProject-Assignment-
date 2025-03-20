@@ -13,16 +13,12 @@ const port = 3000;
 // Middleware to serve static files from the public folder
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Remove favicon route since favicon.ico is missing
-// app.get('/favicon.ico', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'public', 'favicon.ico'));
-// });
 
 app.get('/api/items', (req, res) => {
     try {
         res.json(itemsData);
     } catch (error) {
-        res.status(500).json({ error: 'Failed to load items' });
+        res.status(500).json({ error: "something Ain't right!, Failed to load items" });
     }
 });
 

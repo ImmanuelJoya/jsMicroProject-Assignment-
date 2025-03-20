@@ -11,14 +11,14 @@ document.addEventListener('DOMContentLoaded', () => {
         // Disable button to prevent multiple clicks
         fetchBtn.disabled = true;
         fetchBtn.textContent = 'Loading...';
-        itemsContainer.innerHTML = '<p>Loading items...</p>';
+        itemsContainer.innerHTML = '<p>Loading Random Crap...</p>';
 
         try {
-            const response = await fetch('/api/items');
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
+            const res = await fetch('/api/items');
+            if (!res.ok) {
+                throw new Error("Something Ain't Right!, Network response was not ok");
             }
-            const items = await response.json();
+            const items = await res.json();
             
             // Clear loading message
             itemsContainer.innerHTML = '';
