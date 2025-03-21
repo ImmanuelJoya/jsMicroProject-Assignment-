@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } finally {
             // Re-enable button
             fetchBtn.disabled = false;
-            fetchBtn.textContent = 'Load Items';
+            fetchBtn.textContent = 'Loaded Items';
         }
     });
 });
